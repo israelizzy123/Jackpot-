@@ -26,6 +26,7 @@ function nextImage(el){
 		// do nothing
 	}
 }
+
 // LEMON --> BAR --> CHERRY
 // function nextImage(el){}
 function nextImage2(el){
