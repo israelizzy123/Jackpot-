@@ -7,6 +7,10 @@
 // el.src.match("images/orange_slot.PNG")
 
 // cycle images in the following order: CHERRY --> LEMON --> ORANGE
+a = document.getElementById("slot1");
+b = document.getElementById("slot2");
+c = document.getElementById("slot3");
+var mySound = document.getElementById('you-win');
 
 function nextImage(el){
 	if ( el.src.match("images/cherry_slot.PNG")){
@@ -43,31 +47,27 @@ function nextImage2(el){
 //function nextImage(el){}
 function nextImage3(el){
 	if (el.src.match("images/orange_slot.PNG")){
-		// if the image is a orange, change it to a cherry!
 		el.src = "images/cherry_slot.PNG";
+		// if the image is a cherry, change it to a lemon!
 	} else if (el.src.match("images/cherry_slot.PNG")){
-		// if the image is a cherry, change it to an seven!
 		el.src = "images/seven_slot.PNG";
+		// if the image is a lemon, change it to an orange!
 	} else if (el.src.match("images/seven_slot.PNG")){
-		// if the image is an seven, change it to a watermelon!
 		el.src = "images/watermelon_slot.PNG";
-	} else {
-		// do nothing
-	}
+		// if the image is a lemon, change it to an orange!
+	} else if (el.src.match("images/watermelon_slot.PNG")){
+		el.src = "images/orange_slot.PNG";
+		// if the image is a lemon, change it to an orange!
+	} 
 }
 
 
 function checkSlot(el){
-	if (a.classList.contains("images/cherry_slot.PNG") && b.classList.contains("images/cherry_slot.PNG") && c.classList.contains("images/cherry_slot.PNG")){
-		mySound.play();
-		console.log("You win!");
+	if (a.src.match("images/cherry_slot.PNG") && b.src.match("images/cherry_slot.PNG") && c.src.match("images/cherry_slot.PNG")){
+		document.getElementById('you-win').play()
+		console.log("You Win!");
 		a.classList.add("opaque");
 		b.classList.add("opaque");
 		c.classList.add("opaque");
-	}
-	
-			
-	else{
-		//i wish this function would work when all lights are yellow, or all are red...
 	}
 }
